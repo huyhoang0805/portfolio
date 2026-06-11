@@ -94,7 +94,7 @@ export const WORK_EXPERIENCE = [
   {
     emoji: "🚀",
     title: "Software Engineer — AhaFood.ai (Ahamove)",
-    desc: "Sole frontend owner of the AhaFood.ai webstore (Next.js, React, TypeScript) — a food e-commerce platform running as a webview embedded inside the Ahamove app. Full UI layer + end-to-end backend REST API integration.",
+    desc: "Sole frontend owner of AhaFood.ai — a Turborepo monorepo with customer storefront + merchant dashboard (Next.js 15, TypeScript) running as a webview inside the Ahamove super-app. AI chat ordering with real-time streaming (Vercel AI SDK), OIDC OAuth + OTP auth, next-intl i18n, GA4/Sentry observability.",
     link: "https://ahafood.ai",
   },
   {
@@ -130,54 +130,64 @@ export interface Project {
   tech: string[];
   githubUrl: string;
   liveUrl: string;
+  /** company = dự án ở Ahamove · personal = dự án cá nhân */
+  category: "company" | "personal";
   /** true = mockup bên trái, text bên phải */
   reverse?: boolean;
 }
 
 export const FEATURED_PROJECTS: Project[] = [
+  // ════ Dự án công ty (Ahamove) ════
   {
     title: "Franchise Portal — AI Merchant Onboarding",
     description:
       "Multi-role franchise management portal (admin / partner / merchant) built on TanStack Start with SSR via Nitro, deployed on GCP Cloud Run. Highlight: AI-powered onboarding — merchants upload a menu photo, an AI extraction agent reads items & prices, and results stream live into the UI over SSE; an alternative flow crawls menus straight from food-platform URLs. Type-safe BFF server functions, OTP auth with HttpOnly cookies, and a granular RBAC permission matrix.",
     tech: ["TanStack Start", "React 19", "TypeScript", "Nitro", "AI Agent", "SSE Streaming", "RBAC"],
     githubUrl: "#",           // private repo
-    liveUrl: "#",
+    liveUrl: "https://fc.ahamove.com",
+    category: "company",
     reverse: false,
   },
   {
-    title: "AhaFood.ai — Customer Storefront",
+    title: "AhaFood.ai — Food E-commerce Platform",
     description:
-      "Consumer-facing food e-commerce platform embedded as a webview inside the Ahamove super-app. Full UI layer with end-to-end REST API integration, responsive across mobile webview and desktop. Includes a batch food-image editing tool for merchants built with react-konva (drag/resize/rotate, two-stage local-then-AI processing) and shared FE/BE authorization with CASL v7.",
-    tech: ["Next.js", "TypeScript", "TanStack Query", "react-konva", "CASL", "Tailwind"],
+      "Turborepo monorepo powering two Next.js 15 apps — customer storefront and merchant dashboard — plus shared packages (@ahafood/ui, common-i18n, icons). The storefront runs as a webview inside the Ahamove super-app with AI chat ordering: real-time streaming conversations via Vercel AI SDK v5 with context-aware food recommendations. OIDC OAuth 2.0 + OTP authentication, multi-locale i18n (next-intl), drag-and-drop menu management (@dnd-kit) on the merchant side, GA4/GTM event tracking and Sentry monitoring, tested with Vitest + Playwright.",
+    tech: ["Next.js 15", "TypeScript", "Turborepo", "Vercel AI SDK", "TanStack Query", "OIDC OAuth", "next-intl", "GA4"],
     githubUrl: "#",           // private repo
     liveUrl: "https://ahafood.ai",
+    category: "company",
     reverse: true,
   },
+
+  // ════ Dự án cá nhân ════
   {
     title: "Japanese Learning App — hoc-n3",
     description:
-      "Full-stack web app with a curated dataset of 125 JLPT N5–N3 grammar items, furigana annotation, and AI-generated quizzes via the Anthropic API. Built end-to-end with Next.js, Drizzle ORM, and PostgreSQL — deployed on Vercel.",
-    tech: ["Next.js", "TypeScript", "Drizzle ORM", "PostgreSQL", "Anthropic API"],
+      "JLPT study app built as a fully static React SPA — no backend, everything ships as curated JSON datasets: 125 grammar patterns (N5–N3) with 375 quiz items, 628 kanji organized into 38 radical groups, 2,692 vocabulary items across all 50 Minna no Nihongo lessons, 8 reading-comprehension passages and 10 full mock tests. Custom furigana renderer using <ruby> annotations with a global toggle, flashcard & quiz modes, and progress tracking persisted to localStorage via Zustand.",
+    tech: ["React 18", "TypeScript", "Vite", "TanStack Router", "Zustand", "Radix UI", "Tailwind"],
     githubUrl: "https://github.com/huyhoang0805",
     liveUrl: "https://hoc-n3.vercel.app",
+    category: "personal",
     reverse: false,
   },
   {
     title: "Personal Services Monorepo — canman",
     description:
-      "Turborepo + pnpm monorepo hosting two products — a booking tool for monitor color-calibration services and a friend-group resale/repair marketplace. Next.js Route Handlers, Neon + Drizzle, Clerk auth, UploadThing, Telegram notifications, and Vercel Cron.",
-    tech: ["Turborepo", "Next.js", "Neon", "Drizzle ORM", "Clerk", "Vercel Cron"],
+      "Turborepo + pnpm monorepo running three Next.js services on two isolated Neon Postgres databases (Drizzle ORM): a monitor color-calibration booking tool with distance-based pricing (Haversine + LocationIQ geocoding), a Telegram-bot admin panel, ICS calendar feed and Claude-powered content drafting; a resale/repair marketplace with Cloudinary signed uploads; and a Shopee affiliate link converter with click tracking, rate limiting and a cashback ledger. Clerk auth with two isolated instances, notifications via Telegram Bot API + Resend.",
+    tech: ["Turborepo", "Next.js 14", "Neon + Drizzle", "Clerk", "Telegram Bot", "Claude API", "Cloudinary"],
     githubUrl: "https://github.com/huyhoang0805",
     liveUrl: "https://canman.hoangnh.io.vn",
+    category: "personal",
     reverse: true,
   },
   {
     title: "3D Wheel Generator for 1:64 Diecast",
     description:
-      "Parametric 3D model generator for diecast hobbyists: React/Next.js frontend combined with OpenSCAD compiled to WebAssembly and Claude API integration (BYOK model) for natural-language wheel design — preview in Three.js, export print-ready STL.",
-    tech: ["Next.js", "TypeScript", "OpenSCAD WASM", "Three.js", "Claude API"],
+      "Browser-based parametric wheel generator for diecast hobbyists: describe a wheel through a Zod-validated form (diameter, spoke style, bearing holes, print tolerances) or upload a reference image, and a dual-provider LLM integration (Claude / Gemini, BYOK) writes OpenSCAD code that compiles to print-ready STL entirely in the browser via OpenSCAD WASM. Live Three.js / react-three-fiber preview with orbit controls and wireframe toggle, STL upload with automatic dimension detection for text-instruction editing, and a CodeMirror viewer for the generated code.",
+    tech: ["Next.js 16", "TypeScript", "OpenSCAD WASM", "Three.js / R3F", "Claude & Gemini API", "Zustand", "CodeMirror"],
     githubUrl: "https://github.com/huyhoang0805",
     liveUrl: "#",
+    category: "personal",
     reverse: false,
   },
 ];

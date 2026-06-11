@@ -119,29 +119,57 @@ function ProjectCard({ title, description, tech, githubUrl, liveUrl, reverse }: 
   );
 }
 
+function SectionHeading({ title, sub }: { title: string; sub?: string }) {
+  return (
+    <motion.div
+      className="flex items-center gap-3"
+      initial={{ opacity: 0, y: 20 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true }}
+      transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
+    >
+      <div>
+        <h2 className="text-3xl font-bold text-white">{title}</h2>
+        {sub ? (
+          <p className="text-sm mt-1" style={{ color: "#6b7a99" }}>
+            {sub}
+          </p>
+        ) : null}
+      </div>
+      <motion.div
+        className="flex-1 h-px self-center"
+        style={{ background: "linear-gradient(90deg, rgba(3,232,252,0.3), transparent)" }}
+        initial={{ scaleX: 0, originX: 0 }}
+        whileInView={{ scaleX: 1 }}
+        viewport={{ once: true }}
+        transition={{ delay: 0.3, duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
+      />
+    </motion.div>
+  );
+}
+
 export function FeaturedProjects() {
+  const company = FEATURED_PROJECTS.filter((p) => p.category === "company");
+  const personal = FEATURED_PROJECTS.filter((p) => p.category === "personal");
+
   return (
     <section id="projects" className="py-10 flex flex-col gap-24">
-      <motion.div
-        className="flex items-center gap-3"
-        initial={{ opacity: 0, y: 20 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
-        transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
-      >
-        <h2 className="text-3xl font-bold text-white">Featured Projects</h2>
-        <motion.div
-          className="flex-1 h-px"
-          style={{ background: "linear-gradient(90deg, rgba(3,232,252,0.3), transparent)" }}
-          initial={{ scaleX: 0, originX: 0 }}
-          whileInView={{ scaleX: 1 }}
-          viewport={{ once: true }}
-          transition={{ delay: 0.3, duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
-        />
-      </motion.div>
-
+      <SectionHeading
+        title="Company Projects"
+        sub="Production products I build at Ahamove"
+      />
       <div className="flex flex-col gap-24">
-        {FEATURED_PROJECTS.map((project) => (
+        {company.map((project) => (
+          <ProjectCard key={project.title} {...project} />
+        ))}
+      </div>
+
+      <SectionHeading
+        title="Personal Projects"
+        sub="Side projects — designed, built and deployed end-to-end"
+      />
+      <div className="flex flex-col gap-24">
+        {personal.map((project) => (
           <ProjectCard key={project.title} {...project} />
         ))}
       </div>
