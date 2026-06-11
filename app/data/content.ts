@@ -35,6 +35,14 @@ let's talk.`,
   cvUrl: "/cv/Nguyen_Van_Hoang_CV.docx",
 };
 
+// ── Stat chips quanh avatar ở Hero ─────────────────────────
+export const HERO_STATS = [
+  { value: "2+",   label: "Years Experience" },
+  { value: "5",    label: "Apps Shipped" },
+  { value: "600+", label: "Commits / Year" },
+  { value: "100%", label: "FE Ownership" },
+];
+
 // ── Điều hướng ─────────────────────────────────────────────
 export const NAV_LINKS = [
   { label: "Home",       href: "#"         },

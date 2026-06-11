@@ -1,14 +1,7 @@
 "use client";
 import { motion } from "framer-motion";
-import { PERSONAL } from "../data/content";
+import { HERO_STATS, PERSONAL } from "../data/content";
 import { fadeUp, staggerContainer, springScale } from "../lib/motion";
-
-const STATS = [
-  { value: "3+", label: "Apps Shipped" },
-  { value: "3+", label: "Years Coding" },
-  { value: "600+", label: "Commits" },
-  { value: "200+", label: "Releases" },
-];
 
 const chipPositions = [
   "-top-2 -left-14",
@@ -227,7 +220,7 @@ export function Hero() {
           )}
 
           {/* Floating stat chips */}
-          {STATS.map((stat, i) => (
+          {HERO_STATS.map((stat, i) => (
             <motion.div
               key={stat.label}
               className={`glass-strong absolute ${chipPositions[i]} px-3 py-2 rounded-xl text-center min-w-[76px]`}
