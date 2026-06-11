@@ -13,9 +13,9 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Nguyễn Văn Hoàng — Frontend Engineer",
+  title: "Nguyễn Huy Hoàng — Software Engineer",
   description:
-    "Frontend Engineer with 2+ years of experience building production-grade web apps with React, Next.js, and TypeScript. Sole frontend owner of AhaFood.ai (Ahamove).",
+    "Software Engineer with nearly 3 years of experience building production-grade web apps with React, Next.js, and TypeScript. Sole frontend owner of AhaFood.ai (Ahamove), builder of AI Agent integration for the Franchise Portal.",
 };
 
 export default function RootLayout({

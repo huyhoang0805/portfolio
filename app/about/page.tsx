@@ -94,6 +94,24 @@ export default async function AboutPage() {
                   {currentCompany.emoji} {currentCompany.name}
                 </a>
               </p>
+              <div
+                className="mt-3 pt-3 flex flex-col gap-1.5 text-xs"
+                style={{ borderTop: "1px solid rgba(3,232,252,0.12)", color: "#9090a8" }}
+              >
+                <p>🎂 {PERSONAL.birthday}</p>
+                <p>
+                  📞{" "}
+                  <a href={`tel:${PERSONAL.phone}`} className="hover:underline">
+                    {PERSONAL.phone}
+                  </a>
+                </p>
+                <p>
+                  ✉️{" "}
+                  <a href={`mailto:${PERSONAL.email}`} className="hover:underline">
+                    {PERSONAL.email}
+                  </a>
+                </p>
+              </div>
             </div>
 
             {/* GitLab stats */}

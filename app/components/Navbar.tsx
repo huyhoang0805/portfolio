@@ -81,7 +81,7 @@ export function Navbar() {
         </AnimatePresence>
 
         {/* ── Logo / Name ── */}
-        <a href="#" className="relative z-10 shrink-0">
+        <a href="/" className="relative z-10 shrink-0">
           <motion.span
             className="font-bold tracking-widest text-sm uppercase"
             style={{ color: "#ffffff" }}
@@ -114,7 +114,7 @@ export function Navbar() {
 
         {/* ── CTA Button ── */}
         <motion.a
-          href="#contact"
+          href="/#contact"
           className="relative z-10 shrink-0 px-5 py-2 rounded-full text-xs font-semibold tracking-wide"
           style={{
             background: "linear-gradient(135deg, #03e8fc, #0097a8)",

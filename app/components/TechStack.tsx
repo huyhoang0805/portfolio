@@ -31,6 +31,7 @@ const ICON_MAP: Record<string, React.ReactNode> = {
   SiZod:             <SiZod />,
   SiZustand:         <TextBadge text="Zu" />,      // no simple-icon
   SiDrizzle:         <TextBadge text="Dz" />,      // no simple-icon
+  SiTanstack:        <TextBadge text="TSt" />,     // no simple-icon
   SiPostgresql:      <BiLogoPostgresql />,
   SiTurborepo:       <SiTurborepo />,
   SiVitest:          <SiVitest />,
