@@ -56,9 +56,25 @@ export const NAV_LINKS = [
 
 // ── Mạng xã hội ────────────────────────────────────────────
 export const SOCIALS = [
-  { label: "GitHub",   href: "https://github.com/huyhoang0805",       icon: "github"   },
-  { label: "LinkedIn", href: "https://linkedin.com/in/YOUR_LINKEDIN", icon: "linkedin" }, // TODO
+  { label: "GitHub",   href: "https://github.com/huyhoang0805",      icon: "github"   },
+  // TODO: thay bằng link profile công khai dạng linkedin.com/in/<slug> (link /feed chỉ mở feed của người xem)
+  { label: "LinkedIn", href: "https://www.linkedin.com/feed/",       icon: "linkedin" },
+  { label: "Facebook", href: "https://www.facebook.com/nh88099/",    icon: "facebook" },
 ] as const;
+
+// ── Học vấn ────────────────────────────────────────────────
+export const EDUCATION = {
+  school: "University of Information Technology (UIT) — VNU-HCM",
+  schoolVi: "Trường Đại học Công nghệ Thông tin — ĐHQG TP.HCM",
+  cohort: "Khoá 2020",
+};
+
+// ── Ngoại ngữ ──────────────────────────────────────────────
+export const LANGUAGES = [
+  { label: "Vietnamese", level: "Native" },
+  { label: "English",    level: "Basic communication · technical English" },
+  { label: "Japanese",   level: "JLPT N4" },
+];
 
 // ── Tech stack ─────────────────────────────────────────────
 export const TECH_ROW1 = [

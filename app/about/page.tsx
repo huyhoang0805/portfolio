@@ -1,7 +1,7 @@
 import { ContributionGraphSection } from "../components/ContributionGraphSection";
 import { GitlabProjects, GitlabStats, RecentActivity } from "../components/GitlabActivity";
 import { Navbar } from "../components/Navbar";
-import { PERSONAL, SOCIALS } from "../data/content";
+import { EDUCATION, LANGUAGES, PERSONAL, SOCIALS } from "../data/content";
 import { getGitlabSummary } from "@/lib/gitlab";
 
 // GitLab data is ISR-cached for 6 hours
@@ -32,9 +32,18 @@ function GitlabIcon() {
   );
 }
 
+function FacebookIcon() {
+  return (
+    <svg viewBox="0 0 24 24" fill="currentColor" width={18} height={18}>
+      <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" />
+    </svg>
+  );
+}
+
 const ICON_MAP: Record<string, React.FC> = {
   github: GithubIcon,
   linkedin: LinkedinIcon,
+  facebook: FacebookIcon,
   gitlab: GitlabIcon,
 };
 
@@ -112,6 +121,52 @@ export default async function AboutPage() {
                   </a>
                 </p>
               </div>
+            </div>
+
+            {/* Education */}
+            <div
+              className="rounded-xl p-4 text-sm"
+              style={{
+                background: "rgba(3,232,252,0.06)",
+                border: "1px solid rgba(3,232,252,0.15)",
+              }}
+            >
+              <p
+                className="text-xs font-semibold uppercase tracking-widest mb-2"
+                style={{ color: "#7090a0" }}
+              >
+                Education
+              </p>
+              <p className="font-semibold text-white text-sm">{EDUCATION.school}</p>
+              <p className="text-xs mt-1" style={{ color: "#9090a8" }}>
+                {EDUCATION.schoolVi} · {EDUCATION.cohort}
+              </p>
+            </div>
+
+            {/* Languages */}
+            <div
+              className="rounded-xl p-4 text-sm"
+              style={{
+                background: "rgba(3,232,252,0.06)",
+                border: "1px solid rgba(3,232,252,0.15)",
+              }}
+            >
+              <p
+                className="text-xs font-semibold uppercase tracking-widest mb-2"
+                style={{ color: "#7090a0" }}
+              >
+                Languages
+              </p>
+              <ul className="flex flex-col gap-1.5">
+                {LANGUAGES.map((l) => (
+                  <li key={l.label} className="flex items-baseline justify-between gap-2 text-xs">
+                    <span className="font-medium text-white">{l.label}</span>
+                    <span className="text-right" style={{ color: "#9090a8" }}>
+                      {l.level}
+                    </span>
+                  </li>
+                ))}
+              </ul>
             </div>
 
             {/* GitLab stats */}

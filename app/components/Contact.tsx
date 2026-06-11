@@ -1,6 +1,6 @@
 "use client";
 import { motion } from "framer-motion";
-import { FaInstagram, FaGithub, FaLinkedin } from "react-icons/fa";
+import { FaInstagram, FaGithub, FaLinkedin, FaFacebook } from "react-icons/fa";
 import { PERSONAL, SOCIALS } from "../data/content";
 import { fadeUp, staggerContainer, inViewProps } from "../lib/motion";
 
@@ -8,6 +8,7 @@ const ICON_MAP = {
   instagram: <FaInstagram size={18} />,
   github:    <FaGithub size={18} />,
   linkedin:  <FaLinkedin size={18} />,
+  facebook:  <FaFacebook size={18} />,
 };
 
 export function Contact() {
