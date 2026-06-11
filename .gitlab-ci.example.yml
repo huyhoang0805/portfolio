@@ -1,0 +1,16 @@
+# .gitlab-ci.yml — đặt trong MỘT repo bất kỳ của bạn trên GitLab công ty
+# (có thể tạo repo riêng tên "portfolio-stats-sync" chỉ chứa file này + script).
+#
+# Sau đó: CI/CD → Schedules → tạo schedule chạy mỗi 6 tiếng: 0 */6 * * *
+# Variables cần khai báo (Settings → CI/CD → Variables, chọn Masked):
+#   GITLAB_BASE_URL, GITLAB_TOKEN, GITLAB_USERNAME,
+#   GITLAB_PUBLIC_PROJECTS (optional), PORTFOLIO_REPO_URL
+
+sync-portfolio-stats:
+  image: node:22-alpine
+  rules:
+    - if: $CI_PIPELINE_SOURCE == "schedule"
+  before_script:
+    - apk add --no-cache git
+  script:
+    - node scripts/sync-stats.mjs
