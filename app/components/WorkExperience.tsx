@@ -18,7 +18,7 @@ export function WorkExperience() {
         <h2 className="text-3xl font-bold text-white">Work Experience</h2>
         <motion.div
           className="flex-1 h-px"
-          style={{ background: "linear-gradient(90deg, rgba(3,232,252,0.3), transparent)" }}
+          style={{ background: "linear-gradient(90deg, rgba(61,139,255,0.3), transparent)" }}
           initial={{ scaleX: 0, originX: 0 }}
           whileInView={{ scaleX: 1 }}
           viewport={{ once: true }}

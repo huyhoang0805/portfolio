@@ -24,7 +24,7 @@ Data động lấy từ GitLab self-hosted của công ty (heatmap, recent pushe
 - Component mặc định là Server Component; chỉ thêm `"use client"` khi cần state/event/framer-motion.
 - `GITLAB_TOKEN` chỉ tồn tại server-side (`lib/gitlab/` có `import "server-only"`) — không bao giờ để lộ ra client bundle.
 - Data GitLab phải qua sanitization: project ngoài allowlist chỉ hiện "private project", không lộ tên/branch/commit message công ty.
-- Theme: dark cyan (#07091a nền, #03e8fc accent) — giữ đúng palette, không đổi sang theme khác.
+- Theme: dark navy + blue (#07091a nền, accent #3d8bff → #2563eb) — giữ đúng palette, không đổi sang theme khác.
 - Nội dung hiển thị (tên, bio, experience, projects) phải khớp CV trong `public/cv/`.
 
 ## Quy tắc chi tiết (import khi liên quan)

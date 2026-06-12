@@ -2,8 +2,8 @@ import type { GitlabSummary, ProjectCard, RecentPush } from "@/lib/gitlab/types"
 
 // ── Shared card style (matches About page cards) ───────────
 const cardStyle = {
-  background: "rgba(3,232,252,0.06)",
-  border: "1px solid rgba(3,232,252,0.15)",
+  background: "rgba(61,139,255,0.06)",
+  border: "1px solid rgba(61,139,255,0.15)",
 } as const;
 
 function relativeTime(iso: string): string {
@@ -28,7 +28,7 @@ export function GitlabStats({ totals }: { totals: GitlabSummary["totals"] }) {
     <div className="grid grid-cols-2 gap-3">
       {stats.map((s) => (
         <div key={s.label} className="rounded-xl p-3 text-center" style={cardStyle}>
-          <p className="text-xl font-bold leading-none" style={{ color: "#03e8fc" }}>
+          <p className="text-xl font-bold leading-none" style={{ color: "#3d8bff" }}>
             {s.value}
           </p>
           <p className="text-[10px] mt-1.5 leading-tight" style={{ color: "#9090a8" }}>
@@ -50,10 +50,10 @@ export function RecentActivity({ items }: { items: RecentPush[] }) {
           <span className="truncate" style={{ color: "#b0b0c8" }}>
             <span
               className="inline-block w-2 h-2 rounded-[2px] mr-2 translate-y-px"
-              style={{ background: "#0097a8" }}
+              style={{ background: "#2563eb" }}
             />
             pushed{" "}
-            <span className="font-mono font-medium" style={{ color: "#03e8fc" }}>
+            <span className="font-mono font-medium" style={{ color: "#3d8bff" }}>
               {p.commitCount} commit{p.commitCount === 1 ? "" : "s"}
             </span>{" "}
             to{" "}
@@ -115,9 +115,9 @@ export function GitlabProjects({ projects }: { projects: ProjectCard[] }) {
                   key={t}
                   className="px-2 py-0.5 rounded-full text-[10px] font-medium"
                   style={{
-                    background: "rgba(3,232,252,0.1)",
-                    color: "#9ff5ff",
-                    border: "1px solid rgba(3,232,252,0.2)",
+                    background: "rgba(61,139,255,0.1)",
+                    color: "#b3d4ff",
+                    border: "1px solid rgba(61,139,255,0.2)",
                   }}
                 >
                   {t}

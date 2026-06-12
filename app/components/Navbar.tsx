@@ -70,7 +70,7 @@ export function Navbar() {
               className="absolute top-0 left-[15%] right-[15%] h-px rounded-full pointer-events-none"
               style={{
                 background:
-                  "linear-gradient(90deg, transparent, rgba(3,232,252,0.6) 40%, rgba(3,232,252,0.6) 60%, transparent)",
+                  "linear-gradient(90deg, transparent, rgba(61,139,255,0.6) 40%, rgba(61,139,255,0.6) 60%, transparent)",
               }}
               initial={{ opacity: 0, scaleX: 0.4 }}
               animate={{ opacity: 1, scaleX: 1 }}
@@ -85,7 +85,7 @@ export function Navbar() {
           <motion.span
             className="font-bold tracking-widest text-sm uppercase"
             style={{ color: "#ffffff" }}
-            whileHover={{ color: "#03e8fc" }}
+            whileHover={{ color: "#3d8bff" }}
             transition={{ duration: 0.2 }}
           >
             {PERSONAL.name.split(" ").slice(-2).join(" ")}
@@ -106,7 +106,7 @@ export function Navbar() {
               {label}
               <span
                 className="absolute -bottom-0.5 left-0 right-0 h-px scale-x-0 group-hover:scale-x-100 transition-transform duration-200 origin-center rounded-full"
-                style={{ background: "#03e8fc", boxShadow: "0 0 6px rgba(3,232,252,0.8)" }}
+                style={{ background: "#3d8bff", boxShadow: "0 0 6px rgba(61,139,255,0.8)" }}
               />
             </motion.a>
           ))}
@@ -117,13 +117,13 @@ export function Navbar() {
           href="/#contact"
           className="relative z-10 shrink-0 px-5 py-2 rounded-full text-xs font-semibold tracking-wide"
           style={{
-            background: "linear-gradient(135deg, #03e8fc, #0097a8)",
+            background: "linear-gradient(135deg, #3d8bff, #2563eb)",
             color: "#07091a",
-            boxShadow: "0 2px 16px rgba(3,232,252,0.4)",
+            boxShadow: "0 2px 16px rgba(61,139,255,0.4)",
           }}
           whileHover={{
             scale: 1.06,
-            boxShadow: "0 4px 24px rgba(3,232,252,0.65)",
+            boxShadow: "0 4px 24px rgba(61,139,255,0.65)",
           }}
           whileTap={{ scale: 0.96 }}
           transition={{ type: "spring", stiffness: 400, damping: 20 }}

@@ -26,8 +26,8 @@ export function WorkCard({
       }}
       whileHover={{
         y: -6,
-        boxShadow: "0 16px 48px rgba(3,232,252,0.18), inset 0 1px 0 rgba(255,255,255,0.1)",
-        borderColor: "rgba(3,232,252,0.25)",
+        boxShadow: "0 16px 48px rgba(61,139,255,0.18), inset 0 1px 0 rgba(255,255,255,0.1)",
+        borderColor: "rgba(61,139,255,0.25)",
       }}
       transition={{ type: "spring", stiffness: 300, damping: 22 }}
     >
@@ -36,8 +36,8 @@ export function WorkCard({
         <motion.div
           className="w-12 h-12 rounded-xl flex items-center justify-center text-xl shrink-0"
           style={{
-            background: "linear-gradient(135deg, #003a4d, #0097a8)",
-            boxShadow: "0 4px 20px rgba(3,232,252,0.35)",
+            background: "linear-gradient(135deg, #11305e, #2563eb)",
+            boxShadow: "0 4px 20px rgba(61,139,255,0.35)",
           }}
           whileHover={{ scale: 1.12, rotate: 5 }}
           transition={{ type: "spring", stiffness: 400, damping: 16 }}
@@ -56,7 +56,7 @@ export function WorkCard({
       <motion.a
         href={link}
         className="inline-flex items-center gap-1.5 text-xs font-semibold tracking-widest uppercase self-start group"
-        style={{ color: "#03e8fc" }}
+        style={{ color: "#3d8bff" }}
         whileHover={{ x: 4 }}
         transition={{ type: "spring", stiffness: 400, damping: 20 }}
       >

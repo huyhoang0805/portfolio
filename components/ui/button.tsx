@@ -21,7 +21,7 @@ const buttonVariants = cva(
         link: "text-primary underline-offset-4 hover:underline",
         /** Portfolio: cyan glass button for LEARN MORE etc. */
         glass:
-          "border border-cyan-400/30 bg-cyan-400/10 text-cyan-300 tracking-widest uppercase hover:bg-cyan-400/20 hover:border-cyan-400/50",
+          "border border-blue-400/30 bg-blue-400/10 text-blue-300 tracking-widest uppercase hover:bg-blue-400/20 hover:border-blue-400/50",
       },
       size: {
         default: "h-9 px-4 py-2 has-[>svg]:px-3",

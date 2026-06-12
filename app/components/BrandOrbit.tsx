@@ -14,7 +14,7 @@ export function BrandOrbit() {
       <motion.div
         className="absolute w-[500px] h-[500px] rounded-full pointer-events-none"
         style={{
-          background: "radial-gradient(circle, rgba(3,232,252,0.12) 0%, transparent 70%)",
+          background: "radial-gradient(circle, rgba(61,139,255,0.12) 0%, transparent 70%)",
           filter: "blur(60px)",
         }}
         initial={{ opacity: 0, scale: 0.5 }}
@@ -27,7 +27,7 @@ export function BrandOrbit() {
         {/* Outer static ring */}
         <motion.div
           className="absolute w-72 h-72 rounded-full"
-          style={{ border: "1px solid rgba(3,232,252,0.07)" }}
+          style={{ border: "1px solid rgba(61,139,255,0.07)" }}
           initial={{ opacity: 0, scale: 0.6 }}
           whileInView={{ opacity: 1, scale: 1 }}
           viewport={{ once: true }}
@@ -38,8 +38,8 @@ export function BrandOrbit() {
         <motion.div
           className="absolute w-56 h-56 rounded-full spin-reverse"
           style={{
-            border: "1px dashed rgba(3,232,252,0.12)",
-            borderRightColor: "rgba(3,232,252,0.4)",
+            border: "1px dashed rgba(61,139,255,0.12)",
+            borderRightColor: "rgba(61,139,255,0.4)",
           }}
           initial={{ opacity: 0, scale: 0.5 }}
           whileInView={{ opacity: 1, scale: 1 }}
@@ -51,9 +51,9 @@ export function BrandOrbit() {
         <motion.div
           className="absolute w-44 h-44 rounded-full spin-slow"
           style={{
-            border: "1px solid rgba(3,232,252,0.18)",
-            borderTopColor: "rgba(3,232,252,0.7)",
-            borderRightColor: "rgba(3,232,252,0.35)",
+            border: "1px solid rgba(61,139,255,0.18)",
+            borderTopColor: "rgba(61,139,255,0.7)",
+            borderRightColor: "rgba(61,139,255,0.35)",
           }}
           initial={{ opacity: 0, scale: 0.4 }}
           whileInView={{ opacity: 1, scale: 1 }}
@@ -65,10 +65,10 @@ export function BrandOrbit() {
         <motion.div
           className="relative z-10 pulse-glow rounded-full w-28 h-28 flex items-center justify-center"
           style={{
-            background: "radial-gradient(circle at 40% 30%, #0097a8 0%, #003a4d 50%, #07091a 100%)",
-            border: "1px solid rgba(3,232,252,0.3)",
+            background: "radial-gradient(circle at 40% 30%, #2563eb 0%, #11305e 50%, #07091a 100%)",
+            border: "1px solid rgba(61,139,255,0.3)",
             boxShadow:
-              "0 0 40px rgba(3,232,252,0.4), 0 0 80px rgba(3,232,252,0.15), inset 0 1px 0 rgba(255,255,255,0.1)",
+              "0 0 40px rgba(61,139,255,0.4), 0 0 80px rgba(61,139,255,0.15), inset 0 1px 0 rgba(255,255,255,0.1)",
           }}
           variants={springScale}
           initial="hidden"
@@ -84,8 +84,8 @@ export function BrandOrbit() {
           <motion.div
             className="absolute w-2.5 h-2.5 rounded-full -top-1.5 left-1/2 -translate-x-1/2"
             style={{
-              background: "#03e8fc",
-              boxShadow: "0 0 10px rgba(3,232,252,0.9), 0 0 20px rgba(3,232,252,0.5)",
+              background: "#3d8bff",
+              boxShadow: "0 0 10px rgba(61,139,255,0.9), 0 0 20px rgba(61,139,255,0.5)",
             }}
             initial={{ opacity: 0, scale: 0 }}
             whileInView={{ opacity: 1, scale: 1 }}
@@ -99,7 +99,7 @@ export function BrandOrbit() {
           <motion.div
             className="absolute w-2 h-2 rounded-full -right-1 top-1/2 -translate-y-1/2"
             style={{
-              background: "#7ff5ff",
+              background: "#93c5fd",
               boxShadow: "0 0 8px rgba(127,245,255,0.9)",
             }}
             initial={{ opacity: 0, scale: 0 }}

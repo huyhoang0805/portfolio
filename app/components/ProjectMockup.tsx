@@ -33,12 +33,12 @@ export function ProjectMockup() {
         {/* Headline skeleton */}
         <div
           className="h-4 w-3/4 rounded-lg"
-          style={{ background: "rgba(3,232,252,0.18)" }}
+          style={{ background: "rgba(61,139,255,0.18)" }}
         />
         {/* Subheader bar */}
         <div
           className="h-2 w-1/2 rounded-lg"
-          style={{ background: "rgba(3,232,252,0.1)" }}
+          style={{ background: "rgba(61,139,255,0.1)" }}
         />
 
         {/* Body lines */}
@@ -57,7 +57,7 @@ export function ProjectMockup() {
             <div
               key={i}
               className="h-12 rounded-xl flex-1"
-              style={{ background: "rgba(3,232,252,0.07)", border: "1px solid rgba(3,232,252,0.1)" }}
+              style={{ background: "rgba(61,139,255,0.07)", border: "1px solid rgba(61,139,255,0.1)" }}
             />
           ))}
         </div>
@@ -67,8 +67,8 @@ export function ProjectMockup() {
           <div
             className="h-7 w-24 rounded-lg"
             style={{
-              background: "linear-gradient(135deg, rgba(3,232,252,0.25), rgba(0,151,168,0.2))",
-              border: "1px solid rgba(3,232,252,0.2)",
+              background: "linear-gradient(135deg, rgba(61,139,255,0.25), rgba(37,99,235,0.2))",
+              border: "1px solid rgba(61,139,255,0.2)",
             }}
           />
           <div className="h-7 w-16 rounded-lg" style={{ background: "rgba(255,255,255,0.05)" }} />

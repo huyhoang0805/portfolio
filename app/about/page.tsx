@@ -59,7 +59,7 @@ export default async function AboutPage() {
       <Navbar />
       <main
         className="min-h-screen pt-24 pb-20 px-6"
-        style={{ background: "#000d14" }}
+        style={{ background: "#070b1a" }}
       >
         <div className="max-w-7xl mx-auto flex flex-col lg:flex-row gap-10">
           {/* ── Sidebar ─────────────────────────────────────── */}
@@ -70,9 +70,9 @@ export default async function AboutPage() {
                 className="w-24 h-24 rounded-full flex items-center justify-center text-5xl"
                 style={{
                   background:
-                    "radial-gradient(circle at 40% 35%, #0097a8, #003344 60%, #001020 100%)",
+                    "radial-gradient(circle at 40% 35%, #2563eb, #10264d 60%, #081226 100%)",
                   boxShadow:
-                    "0 0 40px rgba(3,232,252,0.4), 0 0 80px rgba(3,232,252,0.15)",
+                    "0 0 40px rgba(61,139,255,0.4), 0 0 80px rgba(61,139,255,0.15)",
                 }}
               >
                 🧑‍💻
@@ -89,8 +89,8 @@ export default async function AboutPage() {
             <div
               className="rounded-xl p-4 text-sm"
               style={{
-                background: "rgba(3,232,252,0.06)",
-                border: "1px solid rgba(3,232,252,0.15)",
+                background: "rgba(61,139,255,0.06)",
+                border: "1px solid rgba(61,139,255,0.15)",
               }}
             >
               <p style={{ color: "#9090a8" }}>
@@ -105,7 +105,7 @@ export default async function AboutPage() {
               </p>
               <div
                 className="mt-3 pt-3 flex flex-col gap-1.5 text-xs"
-                style={{ borderTop: "1px solid rgba(3,232,252,0.12)", color: "#9090a8" }}
+                style={{ borderTop: "1px solid rgba(61,139,255,0.12)", color: "#9090a8" }}
               >
                 <p>🎂 {PERSONAL.birthday}</p>
                 <p>
@@ -127,13 +127,13 @@ export default async function AboutPage() {
             <div
               className="rounded-xl p-4 text-sm"
               style={{
-                background: "rgba(3,232,252,0.06)",
-                border: "1px solid rgba(3,232,252,0.15)",
+                background: "rgba(61,139,255,0.06)",
+                border: "1px solid rgba(61,139,255,0.15)",
               }}
             >
               <p
                 className="text-xs font-semibold uppercase tracking-widest mb-2"
-                style={{ color: "#7090a0" }}
+                style={{ color: "#7a8fb3" }}
               >
                 Education
               </p>
@@ -147,13 +147,13 @@ export default async function AboutPage() {
             <div
               className="rounded-xl p-4 text-sm"
               style={{
-                background: "rgba(3,232,252,0.06)",
-                border: "1px solid rgba(3,232,252,0.15)",
+                background: "rgba(61,139,255,0.06)",
+                border: "1px solid rgba(61,139,255,0.15)",
               }}
             >
               <p
                 className="text-xs font-semibold uppercase tracking-widest mb-2"
-                style={{ color: "#7090a0" }}
+                style={{ color: "#7a8fb3" }}
               >
                 Languages
               </p>
@@ -176,13 +176,13 @@ export default async function AboutPage() {
             <div
               className="rounded-xl p-4"
               style={{
-                background: "rgba(3,232,252,0.06)",
-                border: "1px solid rgba(3,232,252,0.15)",
+                background: "rgba(61,139,255,0.06)",
+                border: "1px solid rgba(61,139,255,0.15)",
               }}
             >
               <p
                 className="text-xs font-semibold uppercase tracking-widest mb-3"
-                style={{ color: "#7090a0" }}
+                style={{ color: "#7a8fb3" }}
               >
                 Code Activity
               </p>
@@ -198,9 +198,9 @@ export default async function AboutPage() {
               download
               className="rounded-xl p-4 text-sm font-semibold text-center transition-transform hover:scale-[1.02]"
               style={{
-                background: "linear-gradient(135deg, #03e8fc, #0097a8)",
+                background: "linear-gradient(135deg, #3d8bff, #2563eb)",
                 color: "#07091a",
-                boxShadow: "0 4px 24px rgba(3,232,252,0.35)",
+                boxShadow: "0 4px 24px rgba(61,139,255,0.35)",
               }}
             >
               ↓ Download CV
@@ -215,7 +215,7 @@ export default async function AboutPage() {
                     key={label}
                     href={href}
                     aria-label={label}
-                    className="p-2 rounded-lg transition-colors hover:bg-cyan-400/10"
+                    className="p-2 rounded-lg transition-colors hover:bg-blue-400/10"
                     style={{ color: "#9090a8" }}
                   >
                     <Icon />
@@ -231,15 +231,15 @@ export default async function AboutPage() {
             <div className="mb-10">
               <h2
                 className="text-xs font-semibold uppercase tracking-widest mb-4"
-                style={{ color: "#7090a0" }}
+                style={{ color: "#7a8fb3" }}
               >
                 Introduction
               </h2>
               <div
                 className="rounded-2xl p-6"
                 style={{
-                  background: "rgba(3,232,252,0.05)",
-                  border: "1px solid rgba(3,232,252,0.12)",
+                  background: "rgba(61,139,255,0.05)",
+                  border: "1px solid rgba(61,139,255,0.12)",
                 }}
               >
                 <p
@@ -255,22 +255,22 @@ export default async function AboutPage() {
             <div className="mb-10">
               <h2
                 className="text-xs font-semibold uppercase tracking-widest mb-4"
-                style={{ color: "#7090a0" }}
+                style={{ color: "#7a8fb3" }}
               >
                 Experience
               </h2>
               <div
                 className="rounded-2xl p-6 flex flex-col gap-4"
                 style={{
-                  background: "rgba(3,232,252,0.05)",
-                  border: "1px solid rgba(3,232,252,0.12)",
+                  background: "rgba(61,139,255,0.05)",
+                  border: "1px solid rgba(61,139,255,0.12)",
                 }}
               >
                 <div className="flex items-start gap-3">
                   <div
                     className="w-9 h-9 rounded-lg flex items-center justify-center text-lg shrink-0 mt-0.5"
                     style={{
-                      background: "linear-gradient(135deg, #003344, #0097a8)",
+                      background: "linear-gradient(135deg, #10264d, #2563eb)",
                     }}
                   >
                     {currentCompany.emoji}
@@ -292,15 +292,15 @@ export default async function AboutPage() {
               <div className="mb-10">
                 <h2
                   className="text-xs font-semibold uppercase tracking-widest mb-4"
-                  style={{ color: "#7090a0" }}
+                  style={{ color: "#7a8fb3" }}
                 >
                   Recent Activity
                 </h2>
                 <div
                   className="rounded-2xl p-6"
                   style={{
-                    background: "rgba(3,232,252,0.05)",
-                    border: "1px solid rgba(3,232,252,0.12)",
+                    background: "rgba(61,139,255,0.05)",
+                    border: "1px solid rgba(61,139,255,0.12)",
                   }}
                 >
                   <RecentActivity items={summary.recent} />
@@ -313,7 +313,7 @@ export default async function AboutPage() {
               <div>
                 <h2
                   className="text-xs font-semibold uppercase tracking-widest mb-4"
-                  style={{ color: "#7090a0" }}
+                  style={{ color: "#7a8fb3" }}
                 >
                   Projects on GitLab
                 </h2>

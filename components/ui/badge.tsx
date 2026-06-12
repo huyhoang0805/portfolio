@@ -19,7 +19,7 @@ const badgeVariants = cva(
         ghost: "[a&]:hover:bg-accent [a&]:hover:text-accent-foreground",
         link: "text-primary underline-offset-4 [a&]:hover:underline",
         /** Portfolio: subtle cyan tech label */
-        tech: "border-cyan-400/20 bg-cyan-400/10 text-cyan-300 [a&]:hover:bg-cyan-400/20",
+        tech: "border-blue-400/20 bg-blue-400/10 text-blue-300 [a&]:hover:bg-blue-400/20",
       },
     },
     defaultVariants: {

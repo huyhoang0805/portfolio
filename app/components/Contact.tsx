@@ -25,7 +25,7 @@ export function Contact() {
       <motion.div
         className="absolute bottom-0 left-0 w-80 h-80 pointer-events-none"
         style={{
-          background: "radial-gradient(circle, rgba(3,232,252,0.6) 0%, transparent 70%)",
+          background: "radial-gradient(circle, rgba(61,139,255,0.6) 0%, transparent 70%)",
           filter: "blur(60px)",
         }}
         initial={{ opacity: 0 }}
@@ -39,7 +39,7 @@ export function Contact() {
           <h2 className="text-3xl font-bold text-white">Get In Touch</h2>
           <motion.div
             className="flex-1 h-px"
-            style={{ background: "linear-gradient(90deg, rgba(3,232,252,0.3), transparent)" }}
+            style={{ background: "linear-gradient(90deg, rgba(61,139,255,0.3), transparent)" }}
             initial={{ scaleX: 0, originX: 0 }}
             whileInView={{ scaleX: 1 }}
             viewport={{ once: true }}
@@ -59,7 +59,7 @@ export function Contact() {
           }}
           variants={fadeUp}
           whileHover={{
-            boxShadow: "0 12px 48px rgba(3,232,252,0.12), inset 0 1px 0 rgba(255,255,255,0.1)",
+            boxShadow: "0 12px 48px rgba(61,139,255,0.12), inset 0 1px 0 rgba(255,255,255,0.1)",
           }}
           transition={{ duration: 0.3 }}
         >
@@ -72,12 +72,12 @@ export function Contact() {
             href={`mailto:${email}`}
             className="inline-flex items-center gap-2.5 self-start px-4 py-2 rounded-xl text-sm font-medium"
             style={{
-              background: "rgba(3,232,252,0.07)",
-              border: "1px solid rgba(3,232,252,0.2)",
-              color: "#03e8fc",
-              boxShadow: "0 2px 12px rgba(3,232,252,0.12)",
+              background: "rgba(61,139,255,0.07)",
+              border: "1px solid rgba(61,139,255,0.2)",
+              color: "#3d8bff",
+              boxShadow: "0 2px 12px rgba(61,139,255,0.12)",
             }}
-            whileHover={{ scale: 1.04, boxShadow: "0 4px 20px rgba(3,232,252,0.3)" }}
+            whileHover={{ scale: 1.04, boxShadow: "0 4px 20px rgba(61,139,255,0.3)" }}
             whileTap={{ scale: 0.97 }}
             transition={{ type: "spring", stiffness: 400, damping: 20 }}
           >
@@ -93,12 +93,12 @@ export function Contact() {
             href={`tel:${phone}`}
             className="inline-flex items-center gap-2.5 self-start px-4 py-2 rounded-xl text-sm font-medium"
             style={{
-              background: "rgba(3,232,252,0.07)",
-              border: "1px solid rgba(3,232,252,0.2)",
-              color: "#03e8fc",
-              boxShadow: "0 2px 12px rgba(3,232,252,0.12)",
+              background: "rgba(61,139,255,0.07)",
+              border: "1px solid rgba(61,139,255,0.2)",
+              color: "#3d8bff",
+              boxShadow: "0 2px 12px rgba(61,139,255,0.12)",
             }}
-            whileHover={{ scale: 1.04, boxShadow: "0 4px 20px rgba(3,232,252,0.3)" }}
+            whileHover={{ scale: 1.04, boxShadow: "0 4px 20px rgba(61,139,255,0.3)" }}
             whileTap={{ scale: 0.97 }}
             transition={{ type: "spring", stiffness: 400, damping: 20 }}
           >
@@ -130,9 +130,9 @@ export function Contact() {
                 variants={fadeUp}
                 whileHover={{
                   scale: 1.15,
-                  color: "#03e8fc",
-                  borderColor: "rgba(3,232,252,0.4)",
-                  boxShadow: "0 4px 16px rgba(3,232,252,0.25)",
+                  color: "#3d8bff",
+                  borderColor: "rgba(61,139,255,0.4)",
+                  boxShadow: "0 4px 16px rgba(61,139,255,0.25)",
                 }}
                 whileTap={{ scale: 0.95 }}
                 transition={{ type: "spring", stiffness: 400, damping: 18 }}

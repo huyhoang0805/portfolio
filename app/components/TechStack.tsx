@@ -79,7 +79,7 @@ export function TechStack() {
         {TECH_BLURB.line1}{" "}
         <span
           className="font-semibold"
-          style={{ color: "#03e8fc", borderBottom: "2px solid #0097a8", paddingBottom: "1px" }}
+          style={{ color: "#3d8bff", borderBottom: "2px solid #2563eb", paddingBottom: "1px" }}
         >
           {TECH_BLURB.highlight}
         </span>{" "}

@@ -26,7 +26,7 @@ export function Hero() {
         animate={{ opacity: 0.18 }}
         transition={{ duration: 2, ease: "easeOut" }}
         style={{
-          background: "radial-gradient(circle, rgba(3,232,252,0.6) 0%, transparent 70%)",
+          background: "radial-gradient(circle, rgba(61,139,255,0.6) 0%, transparent 70%)",
           filter: "blur(80px)",
           top: "-15%",
           left: "-8%",
@@ -38,7 +38,7 @@ export function Hero() {
         animate={{ opacity: 0.12 }}
         transition={{ duration: 2.5, ease: "easeOut", delay: 0.3 }}
         style={{
-          background: "radial-gradient(circle, rgba(0,151,168,0.7) 0%, transparent 70%)",
+          background: "radial-gradient(circle, rgba(37,99,235,0.7) 0%, transparent 70%)",
           filter: "blur(90px)",
           bottom: "0%",
           right: "-5%",
@@ -49,7 +49,7 @@ export function Hero() {
       <div
         className="absolute inset-0 opacity-[0.13]"
         style={{
-          backgroundImage: "radial-gradient(circle, rgba(3,232,252,0.5) 1px, transparent 1px)",
+          backgroundImage: "radial-gradient(circle, rgba(61,139,255,0.5) 1px, transparent 1px)",
           backgroundSize: "38px 38px",
         }}
       />
@@ -59,7 +59,7 @@ export function Hero() {
         className="absolute inset-x-0 top-0 h-[55%] pointer-events-none"
         style={{
           background:
-            "radial-gradient(ellipse 65% 45% at 50% -5%, rgba(3,232,252,0.1) 0%, transparent 100%)",
+            "radial-gradient(ellipse 65% 45% at 50% -5%, rgba(61,139,255,0.1) 0%, transparent 100%)",
         }}
       />
 
@@ -77,11 +77,11 @@ export function Hero() {
           <motion.div className="flex justify-center md:justify-start" variants={fadeUp}>
             <span
               className="glass inline-flex items-center gap-2 px-4 py-1.5 rounded-full text-xs font-medium"
-              style={{ color: "#9ff5ff" }}
+              style={{ color: "#b3d4ff" }}
             >
               <span className="w-1.5 h-1.5 rounded-full bg-green-400 inline-block" />
               Hello! I Am{" "}
-              <span className="font-semibold" style={{ color: "#03e8fc" }}>
+              <span className="font-semibold" style={{ color: "#3d8bff" }}>
                 {name}
               </span>
             </span>
@@ -98,7 +98,7 @@ export function Hero() {
               {heroHeadline[1]}{" "}
               <motion.span
                 className="relative inline-block"
-                style={{ color: "#03e8fc" }}
+                style={{ color: "#3d8bff" }}
                 initial={{ opacity: 0, y: 10 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.5, duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
@@ -107,15 +107,15 @@ export function Hero() {
                 <motion.span
                   className="absolute left-0 right-0 -bottom-1 h-[2px] rounded-full"
                   style={{
-                    background: "linear-gradient(90deg, #03e8fc, #0097a8)",
-                    boxShadow: "0 0 12px rgba(3,232,252,0.8)",
+                    background: "linear-gradient(90deg, #3d8bff, #2563eb)",
+                    boxShadow: "0 0 12px rgba(61,139,255,0.8)",
                   }}
                   initial={{ scaleX: 0, originX: 0 }}
                   animate={{ scaleX: 1 }}
                   transition={{ delay: 0.75, duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
                 />
               </motion.span>
-              <span style={{ color: "#03e8fc" }}>...</span>
+              <span style={{ color: "#3d8bff" }}>...</span>
             </h1>
           </motion.div>
 
@@ -136,11 +136,11 @@ export function Hero() {
               href="#contact"
               className="px-6 py-2.5 rounded-xl text-sm font-semibold"
               style={{
-                background: "linear-gradient(135deg, #03e8fc, #0097a8)",
+                background: "linear-gradient(135deg, #3d8bff, #2563eb)",
                 color: "#07091a",
-                boxShadow: "0 4px 24px rgba(3,232,252,0.45), inset 0 1px 0 rgba(255,255,255,0.2)",
+                boxShadow: "0 4px 24px rgba(61,139,255,0.45), inset 0 1px 0 rgba(255,255,255,0.2)",
               }}
-              whileHover={{ scale: 1.05, boxShadow: "0 8px 32px rgba(3,232,252,0.6)" }}
+              whileHover={{ scale: 1.05, boxShadow: "0 8px 32px rgba(61,139,255,0.6)" }}
               whileTap={{ scale: 0.97 }}
               transition={{ type: "spring", stiffness: 400, damping: 20 }}
             >
@@ -160,8 +160,8 @@ export function Hero() {
               href={PERSONAL.cvUrl}
               download
               className="glass px-6 py-2.5 rounded-xl text-sm font-semibold"
-              style={{ color: "#9ff5ff", border: "1px solid rgba(3,232,252,0.25)" }}
-              whileHover={{ scale: 1.05, backgroundColor: "rgba(3,232,252,0.08)" }}
+              style={{ color: "#b3d4ff", border: "1px solid rgba(61,139,255,0.25)" }}
+              whileHover={{ scale: 1.05, backgroundColor: "rgba(61,139,255,0.08)" }}
               whileTap={{ scale: 0.97 }}
               transition={{ type: "spring", stiffness: 400, damping: 20 }}
             >
@@ -177,8 +177,8 @@ export function Hero() {
           <motion.div
             className="absolute w-64 h-64 rounded-full pointer-events-none"
             style={{
-              border: "1px solid rgba(3,232,252,0.12)",
-              boxShadow: "0 0 60px rgba(3,232,252,0.08) inset",
+              border: "1px solid rgba(61,139,255,0.12)",
+              boxShadow: "0 0 60px rgba(61,139,255,0.08) inset",
             }}
             initial={{ opacity: 0, scale: 0.7 }}
             animate={{ opacity: 1, scale: 1 }}
@@ -190,10 +190,10 @@ export function Hero() {
             className="w-48 h-48 rounded-full flex items-center justify-center text-7xl"
             style={{
               background:
-                "radial-gradient(circle at 40% 35%, #0097a8 0%, #003a4d 50%, #07091a 100%)",
+                "radial-gradient(circle at 40% 35%, #2563eb 0%, #11305e 50%, #07091a 100%)",
               boxShadow:
-                "0 0 60px rgba(3,232,252,0.5), 0 0 120px rgba(3,232,252,0.18), inset 0 0 30px rgba(3,232,252,0.15)",
-              border: "1px solid rgba(3,232,252,0.35)",
+                "0 0 60px rgba(61,139,255,0.5), 0 0 120px rgba(61,139,255,0.18), inset 0 0 30px rgba(61,139,255,0.15)",
+              border: "1px solid rgba(61,139,255,0.35)",
             }}
             variants={springScale}
             initial="hidden"
@@ -209,7 +209,7 @@ export function Hero() {
           {availableForWork && (
             <motion.div
               className="glass absolute -top-3 right-4 px-3 py-1.5 rounded-full text-xs font-medium flex items-center gap-1.5"
-              style={{ color: "#9ff5ff" }}
+              style={{ color: "#b3d4ff" }}
               initial={{ opacity: 0, y: -10, scale: 0.8 }}
               animate={{ opacity: 1, y: 0, scale: 1 }}
               transition={{ delay: 0.9, type: "spring", stiffness: 300, damping: 18 }}
@@ -242,7 +242,7 @@ export function Hero() {
                 },
               }}
             >
-              <p className="text-lg font-bold leading-none" style={{ color: "#03e8fc" }}>
+              <p className="text-lg font-bold leading-none" style={{ color: "#3d8bff" }}>
                 {stat.value}
               </p>
               <p className="text-[10px] mt-1 leading-tight" style={{ color: "#6b7a99" }}>

@@ -62,7 +62,7 @@ function ProjectCard({ title, description, tech, githubUrl, liveUrl, reverse }: 
             border: "1px solid rgba(255,255,255,0.1)",
             color: "#8a9bb5",
           }}
-          whileHover={{ scale: 1.15, color: "#03e8fc", borderColor: "rgba(3,232,252,0.4)" }}
+          whileHover={{ scale: 1.15, color: "#3d8bff", borderColor: "rgba(61,139,255,0.4)" }}
           whileTap={{ scale: 0.95 }}
           transition={{ type: "spring", stiffness: 400, damping: 18 }}
         >
@@ -77,12 +77,12 @@ function ProjectCard({ title, description, tech, githubUrl, liveUrl, reverse }: 
           rel="noreferrer"
           className="inline-flex items-center gap-2 px-4 py-1.5 rounded-lg text-xs font-semibold"
           style={{
-            background: "linear-gradient(135deg, rgba(3,232,252,0.15), rgba(0,151,168,0.1))",
-            border: "1px solid rgba(3,232,252,0.25)",
-            color: "#03e8fc",
-            boxShadow: "0 2px 12px rgba(3,232,252,0.15)",
+            background: "linear-gradient(135deg, rgba(61,139,255,0.15), rgba(37,99,235,0.1))",
+            border: "1px solid rgba(61,139,255,0.25)",
+            color: "#3d8bff",
+            boxShadow: "0 2px 12px rgba(61,139,255,0.15)",
           }}
-          whileHover={{ scale: 1.05, boxShadow: "0 4px 20px rgba(3,232,252,0.35)" }}
+          whileHover={{ scale: 1.05, boxShadow: "0 4px 20px rgba(61,139,255,0.35)" }}
           whileTap={{ scale: 0.97 }}
           transition={{ type: "spring", stiffness: 400, damping: 18 }}
         >
@@ -138,7 +138,7 @@ function SectionHeading({ title, sub }: { title: string; sub?: string }) {
       </div>
       <motion.div
         className="flex-1 h-px self-center"
-        style={{ background: "linear-gradient(90deg, rgba(3,232,252,0.3), transparent)" }}
+        style={{ background: "linear-gradient(90deg, rgba(61,139,255,0.3), transparent)" }}
         initial={{ scaleX: 0, originX: 0 }}
         whileInView={{ scaleX: 1 }}
         viewport={{ once: true }}

@@ -3,14 +3,14 @@ export function LogoMark({ size = 32 }: { size?: number }) {
     <svg width={size} height={size} viewBox="0 0 40 40" fill="none">
       <polyline
         points="8,6 22,20 8,34"
-        stroke="#03e8fc"
+        stroke="#3d8bff"
         strokeWidth="3.5"
         strokeLinecap="round"
         strokeLinejoin="round"
       />
       <polyline
         points="22,6 36,20 22,34"
-        stroke="#0097a8"
+        stroke="#2563eb"
         strokeWidth="3.5"
         strokeLinecap="round"
         strokeLinejoin="round"
