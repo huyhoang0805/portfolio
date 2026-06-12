@@ -139,7 +139,10 @@ export default async function AboutPage() {
               </p>
               <p className="font-semibold text-white text-sm">{EDUCATION.school}</p>
               <p className="text-xs mt-1" style={{ color: "#9090a8" }}>
-                {EDUCATION.schoolVi} · {EDUCATION.cohort}
+                {EDUCATION.schoolVi}
+              </p>
+              <p className="text-xs mt-1" style={{ color: "#9090a8" }}>
+                {EDUCATION.major} · {EDUCATION.cohort}
               </p>
             </div>
 

@@ -34,7 +34,7 @@ let's talk.`,
   footerCredit: "Built by Nguyễn Huy Hoàng",
 
   /** Đường dẫn file CV trong public/ */
-  cvUrl: "/cv/Nguyen_Van_Hoang_CV.docx",
+  cvUrl: "/cv/Nguyen_Huy_Hoang_CV.pdf",
 };
 
 // ── Stat chips quanh avatar ở Hero ─────────────────────────
@@ -56,16 +56,16 @@ export const NAV_LINKS = [
 
 // ── Mạng xã hội ────────────────────────────────────────────
 export const SOCIALS = [
-  { label: "GitHub",   href: "https://github.com/huyhoang0805",      icon: "github"   },
-  // TODO: thay bằng link profile công khai dạng linkedin.com/in/<slug> (link /feed chỉ mở feed của người xem)
-  { label: "LinkedIn", href: "https://www.linkedin.com/feed/",       icon: "linkedin" },
-  { label: "Facebook", href: "https://www.facebook.com/nh88099/",    icon: "facebook" },
+  { label: "GitHub",   href: "https://github.com/huyhoang0805",                              icon: "github"   },
+  { label: "LinkedIn", href: "https://www.linkedin.com/in/huy-ho%C3%A0ng-nguy%E1%BB%85n-09b34124b", icon: "linkedin" },
+  { label: "Facebook", href: "https://www.facebook.com/nh88099/",                            icon: "facebook" },
 ] as const;
 
 // ── Học vấn ────────────────────────────────────────────────
 export const EDUCATION = {
   school: "University of Information Technology (UIT) — VNU-HCM",
   schoolVi: "Trường Đại học Công nghệ Thông tin — ĐHQG TP.HCM",
+  major: "Information Technology",
   cohort: "Khoá 2020",
 };
 
@@ -167,7 +167,7 @@ export const FEATURED_PROJECTS: Project[] = [
   {
     title: "AhaFood.ai — Food E-commerce Platform",
     description:
-      "Turborepo monorepo powering two Next.js 15 apps — customer storefront and merchant dashboard — plus shared packages (@ahafood/ui, common-i18n, icons). The storefront runs as a webview inside the Ahamove super-app with AI chat ordering: real-time streaming conversations via Vercel AI SDK v5 with context-aware food recommendations. OIDC OAuth 2.0 + OTP authentication, multi-locale i18n (next-intl), drag-and-drop menu management (@dnd-kit) on the merchant side, GA4/GTM event tracking and Sentry monitoring, tested with Vitest + Playwright.",
+      "Turborepo monorepo powering two Next.js 15 apps — customer storefront and merchant dashboard — plus shared packages (@ahafood/ui, common-i18n, icons), serving 2000+ merchants and 3000+ orders per day. The storefront runs as a webview inside the Ahamove super-app with AI chat ordering: real-time streaming conversations via Vercel AI SDK v5 with context-aware food recommendations. OIDC OAuth 2.0 + OTP authentication, multi-locale i18n (next-intl), drag-and-drop menu management (@dnd-kit) on the merchant side, GA4/GTM event tracking and Sentry monitoring, tested with Vitest + Playwright.",
     tech: ["Next.js 15", "TypeScript", "Turborepo", "Vercel AI SDK", "TanStack Query", "OIDC OAuth", "next-intl", "GA4"],
     githubUrl: "#",           // private repo
     liveUrl: "https://ahafood.ai",
@@ -202,7 +202,7 @@ export const FEATURED_PROJECTS: Project[] = [
       "Browser-based parametric wheel generator for diecast hobbyists: describe a wheel through a Zod-validated form (diameter, spoke style, bearing holes, print tolerances) or upload a reference image, and a dual-provider LLM integration (Claude / Gemini, BYOK) writes OpenSCAD code that compiles to print-ready STL entirely in the browser via OpenSCAD WASM. Live Three.js / react-three-fiber preview with orbit controls and wireframe toggle, STL upload with automatic dimension detection for text-instruction editing, and a CodeMirror viewer for the generated code.",
     tech: ["Next.js 16", "TypeScript", "OpenSCAD WASM", "Three.js / R3F", "Claude & Gemini API", "Zustand", "CodeMirror"],
     githubUrl: "https://github.com/huyhoang0805",
-    liveUrl: "#",
+    liveUrl: "https://wheel-forge-two.vercel.app",
     category: "personal",
     reverse: false,
   },

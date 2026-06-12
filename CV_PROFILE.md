@@ -18,8 +18,8 @@
 | Email | nh88099@gmail.com |
 | GitHub | https://github.com/huyhoang0805 |
 | Facebook | https://www.facebook.com/nh88099/ |
-| LinkedIn | `[CẦN ĐIỀN — link dạng linkedin.com/in/<slug>, link /feed không dùng được trong CV]` |
-| Portfolio | `[CẦN ĐIỀN — domain sau khi deploy repo Portfolio]` |
+| LinkedIn | https://www.linkedin.com/in/huy-hoàng-nguyễn-09b34124b |
+| Portfolio | hoangnh.io.vn |
 
 ---
 
@@ -65,14 +65,14 @@ Turborepo · pnpm · Vite · Git · GitLab CI · Vercel · GCP Cloud Run · Figm
 
 ## 4. Professional Experience — Ahamove (HCMC)
 
-**Software Engineer** · `[CẦN ĐIỀN: tháng/năm bắt đầu]` – Present
+**Software Engineer** · 12/2023 – Present
 
 ### 4.1. AhaFood.ai — Food E-commerce Platform (ahafood.ai) · *sole frontend owner*
 
 - Own toàn bộ frontend của AhaFood.ai: **Turborepo monorepo** gồm 2 app Next.js 15
   (customer storefront + merchant dashboard) và 3 shared packages
   (`@ahafood/ui`, `@ahafood/common-i18n`, `@ahafood/icons`); chạy dưới dạng webview
-  nhúng trong Ahamove super-app, phục vụ `[CẦN ĐIỀN: X merchants / X đơn/ngày]`.
+  nhúng trong Ahamove super-app, phục vụ 2000+ merchants / 3000+ đơn/ngày.
 - Xây **AI chat ordering**: hội thoại đặt món streaming real-time qua
   **Vercel AI SDK v5** (`TextStreamChatTransport`), tích hợp recommendation API
   gợi ý món theo vị trí & khách hàng.
@@ -82,8 +82,7 @@ Turborepo · pnpm · Vite · Git · GitLab CI · Vercel · GCP Cloud Run · Figm
   theo thành phố, chẩn đoán lỗi undercount trong webview do `history.replaceState`
   xoá param `?webinapp` trước khi GA4 fire — khôi phục attribution in-app chính xác.
 - Xây tool **batch chỉnh sửa ảnh món ăn** cho merchant bằng react-konva
-  (drag/resize/rotate, flow xử lý 2 bước local-then-AI), giảm
-  `[CẦN ĐIỀN: X%]` thời gian chuẩn bị ảnh.
+  (drag/resize/rotate, flow xử lý 2 bước local-then-AI), giảm 50% thời gian chuẩn bị ảnh.
 - Thiết kế authorization dùng chung FE/BE với **CASL**, serialize permission rules
   sang JSON, server-side enforcement là single source of truth.
 - Merchant dashboard: quản lý menu **drag-and-drop (@dnd-kit)**, data table
@@ -154,7 +153,7 @@ Turborepo · pnpm · Vite · Git · GitLab CI · Vercel · GCP Cloud Run · Figm
   hole qua radial clustering) → mô tả thay đổi bằng text → regenerate.
 - Preview 3D live (orbit controls, wireframe, before/after compare), CodeMirror viewer
   cho code sinh ra, 5 preset (Five-Spoke, Turbine, Mesh, Dish, Deep Dish).
-- `[CẦN ĐIỀN: link deploy nếu có]`
+- Live: https://wheel-forge-two.vercel.app
 
 ### 5.4. Portfolio site (repo này)
 *Next.js 16 · Tailwind v4 · framer-motion · GitLab API*
@@ -185,8 +184,7 @@ Trường Đại học Công nghệ Thông tin — ĐHQG TP.HCM · Khoá 2020
 
 ## 8. Checklist khi sửa CV
 
-- [ ] Đổi tên file & header CV thành **Nguyen Huy Hoang** (file cũ ghi "Nguyen Van Hoang")
-- [ ] Điền các mục `[CẦN ĐIỀN]`: tháng/năm vào Ahamove, số merchant/đơn, % giảm thời gian, LinkedIn /in/, domain portfolio
-- [ ] **Xoá mô tả sai từ template cũ**: hoc-n3 KHÔNG dùng Next.js/Drizzle/PostgreSQL/Anthropic API (thực tế: static React + Vite SPA); my-service KHÔNG dùng UploadThing (thực tế: Cloudinary)
-- [ ] Mục "Testing" cũ ghi Jest — các repo thực tế dùng **Vitest** + Playwright
-- [ ] Sau khi CV mới xong: thay file trong `public/cv/` rồi chạy `/update-cv-content` để đồng bộ portfolio
+- [x] Đổi tên file & header CV thành **Nguyen Huy Hoang** — đã xong (Nguyen_Huy_Hoang_CV.pdf, 2026-06-12)
+- [x] Điền các mục cần điền: 12/2023, 2000+ merchants / 3000+ đơn/ngày, 50%, LinkedIn /in/, portfolio hoangnh.io.vn
+- [x] Mô tả dự án đã viết theo code thật (hoc-n3 static SPA, my-service Cloudinary, Vitest)
+- [x] CV mới đã thay vào `public/cv/Nguyen_Huy_Hoang_CV.pdf` và content.ts đã đồng bộ
