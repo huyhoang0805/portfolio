@@ -1,10 +1,5 @@
+import { SpotlightCard } from "./SpotlightCard";
 import type { GitlabSummary, ProjectCard, RecentPush } from "@/lib/gitlab/types";
-
-// ── Shared card style (matches About page cards) ───────────
-const cardStyle = {
-  background: "rgba(61,139,255,0.06)",
-  border: "1px solid rgba(61,139,255,0.15)",
-} as const;
 
 function relativeTime(iso: string): string {
   const diff = Date.now() - +new Date(iso);
@@ -19,21 +14,20 @@ function relativeTime(iso: string): string {
 // ── Totals: commits / active days / streak / private count ─
 export function GitlabStats({ totals }: { totals: GitlabSummary["totals"] }) {
   const stats = [
-    { value: totals.commitsLastYear, label: "Commits / year" },
-    { value: totals.activeDays, label: "Active days" },
-    { value: totals.currentStreak, label: "Day streak" },
-    { value: totals.privateProjects, label: "Private projects" },
+    { value: totals.commitsLastYear, label: "commits / year" },
+    { value: totals.activeDays, label: "active days" },
+    { value: totals.currentStreak, label: "day streak" },
+    { value: totals.privateProjects, label: "private projects" },
   ];
   return (
-    <div className="grid grid-cols-2 gap-3">
+    <div className="grid grid-cols-2 gap-3 font-mono">
       {stats.map((s) => (
-        <div key={s.label} className="rounded-xl p-3 text-center" style={cardStyle}>
-          <p className="text-xl font-bold leading-none" style={{ color: "#3d8bff" }}>
-            {s.value}
-          </p>
-          <p className="text-[10px] mt-1.5 leading-tight" style={{ color: "#9090a8" }}>
-            {s.label}
-          </p>
+        <div
+          key={s.label}
+          className="rounded-lg p-3 text-center border border-(--border-color) bg-(--bg-card)"
+        >
+          <p className="text-xl font-bold leading-none text-primary">{s.value}</p>
+          <p className="text-[10px] mt-1.5 leading-tight text-muted-foreground">{s.label}</p>
         </div>
       ))}
     </div>
@@ -47,30 +41,25 @@ export function RecentActivity({ items }: { items: RecentPush[] }) {
     <ul className="flex flex-col gap-2.5">
       {items.map((p, i) => (
         <li key={i} className="flex items-baseline justify-between gap-3 text-sm">
-          <span className="truncate" style={{ color: "#b0b0c8" }}>
-            <span
-              className="inline-block w-2 h-2 rounded-[2px] mr-2 translate-y-px"
-              style={{ background: "#2563eb" }}
-            />
+          <span className="truncate text-foreground/70">
+            <span className="inline-block w-2 h-2 rounded-[2px] mr-2 translate-y-px bg-primary/70" />
             pushed{" "}
-            <span className="font-mono font-medium" style={{ color: "#3d8bff" }}>
+            <span className="font-mono font-medium text-primary">
               {p.commitCount} commit{p.commitCount === 1 ? "" : "s"}
             </span>{" "}
             to{" "}
             {p.isPrivate ? (
-              <span className="italic" style={{ color: "#6b7a99" }}>
-                {p.projectLabel}
-              </span>
+              <span className="italic text-muted-foreground">{p.projectLabel}</span>
             ) : (
-              <span className="font-medium text-white">{p.projectLabel}</span>
+              <span className="font-medium text-foreground">{p.projectLabel}</span>
             )}
             {p.branch ? (
-              <span className="font-mono text-xs" style={{ color: "#6b7a99" }}>
+              <span className="font-mono text-xs text-muted-foreground">
                 {" "}· {p.branch.replace("refs/heads/", "")}
               </span>
             ) : null}
           </span>
-          <time className="shrink-0 font-mono text-xs" style={{ color: "#6b7a99" }}>
+          <time className="shrink-0 font-mono text-xs text-muted-foreground">
             {relativeTime(p.date)}
           </time>
         </li>
@@ -85,50 +74,46 @@ export function GitlabProjects({ projects }: { projects: ProjectCard[] }) {
   return (
     <div className="grid sm:grid-cols-2 gap-4">
       {projects.map((p) => (
-        <div key={p.name} className="rounded-2xl p-5 flex flex-col gap-2" style={cardStyle}>
+        <SpotlightCard
+          key={p.name}
+          className="rounded-xl p-5 flex flex-col gap-2 border border-(--border-color) bg-(--bg-card) transition-colors duration-300 hover:border-primary/35"
+        >
           <div className="flex items-center justify-between gap-2">
             {p.url ? (
               <a
                 href={p.url}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="font-semibold text-sm text-white hover:underline truncate"
+                className="font-semibold text-sm text-foreground hover:text-primary transition-colors duration-200 truncate"
               >
                 {p.name}
               </a>
             ) : (
-              <p className="font-semibold text-sm text-white truncate">{p.name}</p>
+              <p className="font-semibold text-sm text-foreground truncate">{p.name}</p>
             )}
-            <span className="shrink-0 text-xs font-mono" style={{ color: "#6b7a99" }}>
+            <span className="shrink-0 text-xs font-mono text-muted-foreground">
               ★ {p.stars}
             </span>
           </div>
           {p.description ? (
-            <p className="text-xs leading-relaxed" style={{ color: "#9090a8" }}>
-              {p.description}
-            </p>
+            <p className="text-xs leading-relaxed text-muted-foreground">{p.description}</p>
           ) : null}
           {p.topics.length > 0 ? (
             <div className="flex flex-wrap gap-1.5 mt-auto pt-1">
               {p.topics.map((t) => (
                 <span
                   key={t}
-                  className="px-2 py-0.5 rounded-full text-[10px] font-medium"
-                  style={{
-                    background: "rgba(61,139,255,0.1)",
-                    color: "#b3d4ff",
-                    border: "1px solid rgba(61,139,255,0.2)",
-                  }}
+                  className="px-2 py-0.5 rounded-md font-mono text-[10px] border border-(--border-color) text-accent-bright"
                 >
                   {t}
                 </span>
               ))}
             </div>
           ) : null}
-          <p className="text-[10px] font-mono" style={{ color: "#6b7a99" }}>
+          <p className="text-[10px] font-mono text-muted-foreground">
             last active {relativeTime(p.lastActivityAt)}
           </p>
-        </div>
+        </SpotlightCard>
       ))}
     </div>
   );

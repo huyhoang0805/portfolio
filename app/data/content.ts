@@ -32,18 +32,56 @@ of something real. If you're building with Next.js, React, or integrating AI fea
 let's talk.`,
 
   footerCredit: "Built by Nguyễn Huy Hoàng",
+  footerColophon:
+    "Designed & built by me — Next.js · Tailwind v4 · Framer Motion. Activity data synced from a self-hosted GitLab via CI.",
 
   /** Đường dẫn file CV trong public/ */
   cvUrl: "/cv/Nguyen_Huy_Hoang_CV.pdf",
 };
 
-// ── Stat chips quanh avatar ở Hero ─────────────────────────
+// ── Stat strip ở Hero (fallback khi chưa có data GitLab) ───
 export const HERO_STATS = [
-  { value: "3", label: "Years Experience" },
-  { value: "6", label: "Apps Shipped" },
-  { value: "600+", label: "Commits / Year" },
-  { value: "100%", label: "FE Ownership" },
+  { value: "3", label: "years experience" },
+  { value: "6", label: "apps shipped" },
+  { value: "600+", label: "commits / year" },
+  { value: "100%", label: "FE ownership" },
 ];
+
+// ── Live stat từ GitLab hiển thị ở Hero ────────────────────
+export const HERO_LIVE_STAT = {
+  commits: "commits · 12 months",
+  activeDays: "active days",
+  streak: "day streak",
+  source: "live from self-hosted GitLab",
+} as const;
+
+// ── Dòng trạng thái mono trên headline ─────────────────────
+export const HERO_STATUS = {
+  openToWork: "open to work",
+  location: "Ho Chi Minh City",
+} as const;
+
+// ── Heading các section trang chủ ──────────────────────────
+export const SECTION_HEADINGS = {
+  proofOfWork: {
+    title: "Proof of work",
+    sub: "Real activity, synced automatically from the self-hosted GitLab I ship from every day.",
+  },
+  experience: {
+    title: "Experience",
+  },
+  companyProjects: {
+    title: "Work — Ahamove",
+    sub: "Production products I build and own",
+  },
+  personalProjects: {
+    title: "Personal builds",
+    sub: "Designed, built and deployed end-to-end",
+  },
+  contact: {
+    title: "Get in touch",
+  },
+} as const;
 
 // ── Điều hướng ─────────────────────────────────────────────
 // Dùng path tuyệt đối để hoạt động từ mọi trang (kể cả /about)
@@ -53,6 +91,8 @@ export const NAV_LINKS = [
   { label: "Projects",   href: "/#projects" },
   { label: "Contact",    href: "/#contact"  },
 ];
+
+export const NAV_CTA = { label: "hire me", href: "/#contact" } as const;
 
 // ── Mạng xã hội ────────────────────────────────────────────
 export const SOCIALS = [
@@ -72,7 +112,7 @@ export const EDUCATION = {
 // ── Ngoại ngữ ──────────────────────────────────────────────
 export const LANGUAGES = [
   { label: "Vietnamese", level: "Native" },
-  { label: "English",    level: "Basic communication · technical English" },
+  { label: "English",    level: "Intermediate" },
   { label: "Japanese",   level: "JLPT N4" },
 ];
 
@@ -139,71 +179,110 @@ export const WORK_EXPERIENCE = [
   },
 ];
 
-// ── Dự án nổi bật ──────────────────────────────────────────
+// ── Dự án nổi bật — dạng mini case-study ───────────────────
+export interface ProjectOutcome {
+  /** Con số / fact ngắn đặt trước (vd: "2000+") */
+  value: string;
+  label: string;
+}
+
 export interface Project {
   title: string;
-  description: string;
+  /** Vấn đề cần giải — 1-2 câu */
+  problem: string;
+  /** Giải pháp đã build — 2-3 câu, nêu tech thật */
+  solution: string;
+  /** Kết quả đo được — số đặt trước, chữ sau */
+  outcomes: ProjectOutcome[];
   tech: string[];
   githubUrl: string;
   liveUrl: string;
   /** company = dự án ở Ahamove · personal = dự án cá nhân */
   category: "company" | "personal";
-  /** true = mockup bên trái, text bên phải */
-  reverse?: boolean;
 }
 
 export const FEATURED_PROJECTS: Project[] = [
   // ════ Dự án công ty (Ahamove) ════
   {
     title: "Franchise Portal — AI Merchant Onboarding",
-    description:
-      "Multi-role franchise management portal (admin / partner / merchant) built on TanStack Start with SSR via Nitro, deployed on GCP Cloud Run. Highlight: AI-powered onboarding — merchants upload a menu photo, an AI extraction agent reads items & prices, and results stream live into the UI over SSE; an alternative flow crawls menus straight from food-platform URLs. Type-safe BFF server functions, OTP auth with HttpOnly cookies, and a granular RBAC permission matrix.",
+    problem:
+      "Onboarding a merchant meant manually re-typing every menu item and price from photos — slow, error-prone, and a bottleneck for franchise growth.",
+    solution:
+      "Built AI-powered onboarding on TanStack Start (React 19, SSR via Nitro, GCP Cloud Run): an AI extraction agent reads menu photos and streams detected items & prices live into the UI over SSE, with an alternative flow that crawls menus straight from food-platform URLs. Type-safe BFF server functions, OTP auth with HttpOnly cookies.",
+    outcomes: [
+      { value: "2", label: "onboarding flows — photo AI + URL crawler" },
+      { value: "live", label: "SSE streaming into the scanning UI" },
+      { value: "3", label: "roles under one granular RBAC matrix" },
+    ],
     tech: ["TanStack Start", "React 19", "TypeScript", "Nitro", "AI Agent", "SSE Streaming", "RBAC"],
     githubUrl: "#",           // private repo
     liveUrl: "https://fc.ahamove.com",
     category: "company",
-    reverse: false,
   },
   {
     title: "AhaFood.ai — Food E-commerce Platform",
-    description:
-      "Turborepo monorepo powering two Next.js 15 apps — customer storefront and merchant dashboard — plus shared packages (@ahafood/ui, common-i18n, icons), serving 2000+ merchants and 3000+ orders per day. The storefront runs as a webview inside the Ahamove super-app with AI chat ordering: real-time streaming conversations via Vercel AI SDK v5 with context-aware food recommendations. OIDC OAuth 2.0 + OTP authentication, multi-locale i18n (next-intl), drag-and-drop menu management (@dnd-kit) on the merchant side, GA4/GTM event tracking and Sentry monitoring, tested with Vitest + Playwright.",
+    problem:
+      "Ahamove needed a food-ordering storefront running inside its super-app webview — owned end-to-end by a single frontend engineer.",
+    solution:
+      "Turborepo monorepo powering two Next.js 15 apps — customer storefront and merchant dashboard — plus shared packages. AI chat ordering with real-time streaming (Vercel AI SDK v5), OIDC OAuth 2.0 + OTP auth, multi-locale i18n (next-intl), GA4/GTM tracking and Sentry monitoring, tested with Vitest + Playwright.",
+    outcomes: [
+      { value: "2000+", label: "merchants served" },
+      { value: "3000+", label: "orders per day" },
+      { value: "100%", label: "frontend ownership — one engineer" },
+    ],
     tech: ["Next.js 15", "TypeScript", "Turborepo", "Vercel AI SDK", "TanStack Query", "OIDC OAuth", "next-intl", "GA4"],
     githubUrl: "#",           // private repo
     liveUrl: "https://ahafood.ai",
     category: "company",
-    reverse: true,
   },
 
   // ════ Dự án cá nhân ════
   {
     title: "Japanese Learning App — hoc-n3",
-    description:
-      "JLPT study app built as a fully static React SPA — no backend, everything ships as curated JSON datasets: 125 grammar patterns (N5–N3) with 375 quiz items, 628 kanji organized into 38 radical groups, 2,692 vocabulary items across all 50 Minna no Nihongo lessons, 8 reading-comprehension passages and 10 full mock tests. Custom furigana renderer using <ruby> annotations with a global toggle, flashcard & quiz modes, and progress tracking persisted to localStorage via Zustand.",
+    problem:
+      "JLPT prep material is scattered across books and paid apps — I wanted one free tool covering grammar, kanji, vocabulary and mock tests for my own N3 study.",
+    solution:
+      "Fully static React SPA with no backend — everything ships as curated JSON datasets. Custom furigana renderer using <ruby> annotations with a global toggle, flashcard & quiz modes, progress persisted to localStorage via Zustand.",
+    outcomes: [
+      { value: "2,692", label: "vocabulary items across 50 lessons" },
+      { value: "628", label: "kanji in 38 radical groups" },
+      { value: "125", label: "grammar patterns + 10 full mock tests" },
+    ],
     tech: ["React 18", "TypeScript", "Vite", "TanStack Router", "Zustand", "Radix UI", "Tailwind"],
     githubUrl: "https://github.com/huyhoang0805",
     liveUrl: "https://hoc-n3.vercel.app",
     category: "personal",
-    reverse: false,
   },
   {
     title: "Personal Services Monorepo — canman",
-    description:
-      "Turborepo + pnpm monorepo running three Next.js services on two isolated Neon Postgres databases (Drizzle ORM): a monitor color-calibration booking tool with distance-based pricing (Haversine + LocationIQ geocoding), a Telegram-bot admin panel, ICS calendar feed and Claude-powered content drafting; a resale/repair marketplace with Cloudinary signed uploads; and a Shopee affiliate link converter with click tracking, rate limiting and a cashback ledger. Clerk auth with two isolated instances, notifications via Telegram Bot API + Resend.",
+    problem:
+      "My freelance side-services (color calibration booking, resale marketplace, affiliate links) each needed real infra — bookings, payments tracking, admin — without the overhead of running three separate stacks.",
+    solution:
+      "Turborepo + pnpm monorepo running three Next.js services on two isolated Neon Postgres databases (Drizzle ORM): distance-based pricing via Haversine + LocationIQ geocoding, Telegram-bot admin panel, ICS calendar feed, Claude-powered content drafting, Cloudinary signed uploads, Clerk auth with two isolated instances.",
+    outcomes: [
+      { value: "3", label: "production services, one monorepo" },
+      { value: "2", label: "isolated Postgres databases" },
+      { value: "0", label: "manual admin — Telegram bot + automation" },
+    ],
     tech: ["Turborepo", "Next.js 14", "Neon + Drizzle", "Clerk", "Telegram Bot", "Claude API", "Cloudinary"],
     githubUrl: "https://github.com/huyhoang0805",
     liveUrl: "https://canman.hoangnh.io.vn",
     category: "personal",
-    reverse: true,
   },
   {
     title: "3D Wheel Generator for 1:64 Diecast",
-    description:
-      "Browser-based parametric wheel generator for diecast hobbyists: describe a wheel through a Zod-validated form (diameter, spoke style, bearing holes, print tolerances) or upload a reference image, and a dual-provider LLM integration (Claude / Gemini, BYOK) writes OpenSCAD code that compiles to print-ready STL entirely in the browser via OpenSCAD WASM. Live Three.js / react-three-fiber preview with orbit controls and wireframe toggle, STL upload with automatic dimension detection for text-instruction editing, and a CodeMirror viewer for the generated code.",
+    problem:
+      "Custom wheels for 1:64 diecast cars require CAD skills most hobbyists don't have — they just know the dimensions and the look they want.",
+    solution:
+      "Describe a wheel through a Zod-validated form (diameter, spoke style, bearing holes, print tolerances) or a reference image; a dual-provider LLM integration (Claude / Gemini, BYOK) writes OpenSCAD code that compiles to print-ready STL entirely in the browser via OpenSCAD WASM, with live Three.js / R3F preview and STL upload + dimension detection for text-instruction editing.",
+    outcomes: [
+      { value: "100%", label: "in-browser — form to print-ready STL" },
+      { value: "2", label: "LLM providers, bring-your-own-key" },
+      { value: "0", label: "CAD knowledge required" },
+    ],
     tech: ["Next.js 16", "TypeScript", "OpenSCAD WASM", "Three.js / R3F", "Claude & Gemini API", "Zustand", "CodeMirror"],
     githubUrl: "https://github.com/huyhoang0805",
     liveUrl: "https://wheel-forge-two.vercel.app",
     category: "personal",
-    reverse: false,
   },
 ];

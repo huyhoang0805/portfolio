@@ -53,6 +53,12 @@ export const springScale: Variants = {
   },
 };
 
+// ── Mask reveal (hero headline — bọc ngoài bằng span overflow-hidden) ──
+export const maskLine: Variants = {
+  hidden:  { y: "115%" },
+  visible: { y: 0, transition: { duration: 0.85, ease: EASE_OUT_EXPO } },
+};
+
 // ── Common whileInView props ───────────────────────────────
 export const inViewProps = {
   initial: "hidden",

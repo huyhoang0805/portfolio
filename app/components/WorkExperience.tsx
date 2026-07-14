@@ -1,30 +1,22 @@
 "use client";
 import { motion } from "framer-motion";
 import { WorkCard } from "./WorkCard";
-import { WORK_EXPERIENCE } from "../data/content";
+import { SECTION_HEADINGS, WORK_EXPERIENCE } from "../data/content";
 import { fadeUp, staggerContainer, inViewProps } from "../lib/motion";
 
 export function WorkExperience() {
   return (
     <motion.section
-      className="py-10"
+      className="py-14"
       variants={staggerContainer(0.12)}
       {...inViewProps}
     >
-      <motion.div
-        className="flex items-center gap-3 mb-8"
+      <motion.h2
+        className="font-display font-extrabold text-4xl md:text-5xl tracking-tight text-foreground mb-10"
         variants={fadeUp}
       >
-        <h2 className="text-3xl font-bold text-white">Work Experience</h2>
-        <motion.div
-          className="flex-1 h-px"
-          style={{ background: "linear-gradient(90deg, rgba(61,139,255,0.3), transparent)" }}
-          initial={{ scaleX: 0, originX: 0 }}
-          whileInView={{ scaleX: 1 }}
-          viewport={{ once: true }}
-          transition={{ delay: 0.3, duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
-        />
-      </motion.div>
+        {SECTION_HEADINGS.experience.title}
+      </motion.h2>
 
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
         {WORK_EXPERIENCE.map((card, i) => (

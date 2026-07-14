@@ -15,8 +15,8 @@ export interface ContributionGraphSectionProps {
   byDate: Record<string, number>;
 }
 
-// Cyan color ramp: level 0 (empty) → level 4 (most active)
-const LEVEL_COLORS = ["#081226", "#10264d", "#1a3d7a", "#2563eb", "#3d8bff"] as const;
+// Neon blue ramp (palette v2): level 0 (empty) → level 4 (most active)
+const LEVEL_COLORS = ["#0b0f18", "#12304f", "#1d5588", "#2f81cf", "#3fa9ff"] as const;
 
 function buildActivityData(byDate: Record<string, number>): Activity[] {
   const now = new Date();

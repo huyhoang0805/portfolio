@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 import { useTyping } from "../hooks/useTyping";
 import { useMounted } from "../hooks/useMounted";
 import { PERSONAL } from "../data/content";
-import { fadeUp, slideLeft, staggerContainer, inViewProps } from "../lib/motion";
+import { fadeUp, staggerContainer, inViewProps } from "../lib/motion";
 
 export function About() {
   const { roles, currentRole, currentCompany, bio } = PERSONAL;
@@ -18,31 +18,30 @@ export function About() {
       {...inViewProps}
     >
       <motion.h2
-        className="text-4xl font-bold mb-3 text-white flex items-center gap-1"
-        variants={slideLeft}
+        className="font-display font-extrabold text-4xl md:text-5xl tracking-tight text-foreground flex items-center gap-1 mb-4"
+        variants={fadeUp}
       >
         I&apos;m a {mounted ? typed : roles[0]}
         <span className="cursor" />
       </motion.h2>
 
       <motion.p
-        className="text-sm mb-6"
-        style={{ color: "#6b7a99" }}
+        className="font-mono text-xs text-muted-foreground mb-8"
         variants={fadeUp}
       >
-        Currently, I&apos;m a {currentRole} at{" "}
+        currently {currentRole} @{" "}
         <a
           href={currentCompany.url}
-          className="font-semibold hover:underline"
-          style={{ color: "#1877f2" }}
+          target="_blank"
+          rel="noreferrer"
+          className="text-primary hover:text-accent-bright transition-colors duration-200"
         >
-          {currentCompany.emoji} {currentCompany.name}
+          {currentCompany.name}
         </a>
       </motion.p>
 
       <motion.p
-        className="text-base leading-relaxed whitespace-pre-line"
-        style={{ color: "#8a9bb5", maxWidth: "560px" }}
+        className="text-base leading-relaxed whitespace-pre-line text-foreground/75 max-w-2xl"
         variants={fadeUp}
       >
         {bio}
